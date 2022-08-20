@@ -1,0 +1,35 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+body{
+    font-family: v.$fuentePrincipal;
+    background-color: v.$LighGray;
+}
+
+.qr{
+padding-top: 20rem;
+}
+.qrfont{
+    background-color: v.$White;
+    padding: 3rem;
+    width: 30rem ;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 1.2rem;
+    text-align: center;
+    &__text{
+        font-size: 2rem;
+        text-align: center;
+        font-weight: 700;
+    }
+    &__description{
+        font-size: 1.4rem;
+        color:v.$GrayishBlue;
+        
+    }
+
+}
+
+.attribution{
+    margin-top: 10rem;
+}
