@@ -1,0 +1,43 @@
+@use 'base/variables' as v; 
+
+@mixin desktop {
+    @media (min-width: v.$Desktop) {
+        @content;
+    }
+}
+
+
+
+@mixin grid($columnas, $espaciado ) {
+    display: grid;
+    gap: $espaciado;
+    grid-template-columns: repeat($columnas, 1fr);
+}
+
+
+@mixin heading {
+    margin: 0;
+    text-align: center;
+    color: v.$gris;
+}
+
+
+@mixin boton($bgColor, $colorTexto) {
+    background-color: $bgColor;
+    padding: 1.5rem 4rem;
+    color: $colorTexto;
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: 400;
+    display: inline-block;
+    font-weight: 700;
+    border: none;
+    transition-property: background-color;
+    transition-duration: .3s;
+    text-align: center;
+
+
+    &:hover {
+        background-color: darken( $bgColor, 10% );
+    }
+}

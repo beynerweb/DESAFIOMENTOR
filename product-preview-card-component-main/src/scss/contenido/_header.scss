@@ -1,0 +1,117 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.producto {
+    margin-top: 10rem;
+    background-color: v.$White;
+    border-radius: 2rem;
+    width: 100%;
+
+}
+
+.contenido {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ 
+    @include m.desktop {
+        @include m.grid(2, 1fr);
+    }
+   
+    &__imagen {
+        width: 100%;
+   
+
+        @include m.desktop {
+            width: 90%;
+        }
+    }
+
+}
+
+.description {
+    margin-top: 5rem;
+    width: 100%;
+    padding: 2rem;
+    &__title {
+        font-size: 3rem;
+        letter-spacing: 4px;
+        color: v.$DarkGrayishBlue;
+        font-family: v.$fuentePrincipal;
+
+        @include m.desktop {
+            font-size: 2rem;
+        }
+    }
+
+    &__heading {
+        font-size: 4rem;
+        width: 100%;
+        margin: 0;
+        color: v.$VeryDarkBlue;
+    
+        @include m.desktop {
+            width: 90%;
+            font-size: 9rem;
+        }
+    }
+
+    &__text {
+        width: 100%;
+        color: v.$DarkGrayishBlue;
+        @include m.desktop {
+            width: 90%;
+
+        }
+    }
+
+}
+
+.precio {
+    display: flex;
+    justify-content: left;
+    
+    align-items: center;
+    font-family: v.$fuentePrincipal;
+   
+
+    &__norm {
+        font-size: 5rem;
+        font-weight: 700;
+        color: v.$DarkCyan;
+        margin-right: 2rem;
+    
+    }
+
+    &__oferta {
+        font-size: 2rem;
+        color: v.$DarkGrayishBlue;
+        text-decoration-line: line-through;
+    }
+}
+
+.boton {
+    
+   padding-top: 5rem;
+    &__btn {
+        @include m.boton(v.$DarkCyan, v.$White);
+        width: 100%;
+        font-weight: 700;
+        &::before{
+            content: '';
+            background-image: url(../img/icon-cart.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            margin-right: 1rem;
+
+          
+        }
+          @include m.desktop {
+                width: 85%;
+            }
+    }
+}
